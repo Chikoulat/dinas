@@ -1,7 +1,46 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/home',
+                permanent: true,
+            },
+        ]
+    },
+
+    images: {
+        domains: ['assets.aceternity.com', 'images.unsplash.com'],
+    },
+
+    async headers()
+    {
+        return [
+            {
+                source: "/(.*)",
+                headers: [
+                    {
+                        key: "X-Content-Type-Options",
+                        value: "nosniff",
+                    },
+                    {
+                        key: "X-Frame-Options",
+                        value: "DENY",
+                    },
+                    {
+                        key: "Referrer-Policy",
+                        value: "same-origin",
+                    },
+                    {
+                        key: "X-XSS-Protection",
+                        value: "1; mode=block",
+                    },
+                ],
+            },
+        ];
+    }
 };
 
 export default nextConfig;

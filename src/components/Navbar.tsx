@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import logoBlue from '../../public/logo/DCA LOGO B.png';
 import logoWhite from '../../public/logo/DCA LOGO WHITE.png';
@@ -10,6 +10,58 @@ import closeWhite from '../../public/button/close-white.png';
 import closeBlue from '../../public/button/close-blue.png';
 import { usePathname } from 'next/navigation';
 
+const handleScrollToSectionAction = (
+    event: React.MouseEvent,
+    sectionId: string
+) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+const getNavbarClasses = (scroll: boolean, isHomePage: boolean, isContactPage: boolean) => {
+    if (scroll && isHomePage) return 'bg-white text-primary';
+    if (isContactPage) return 'bg-gray-800 text-white';
+    return 'bg-transparent text-white';
+};
+
+const renderLogo = (scroll: boolean, isHomePage: boolean) => {
+    return scroll && isHomePage ? (
+        <Image src={logoBlue} alt="logo" className="size-12 lg:size-20" />
+    ) : (
+        <Image src={logoWhite} alt="logo" className="size-12 lg:size-20" />
+    );
+};
+
+const renderMobileMenu = (isOpen: boolean, scroll: boolean, handleToggle: () => void) => {
+    return (
+        <button
+            type="button"
+            onClick={handleToggle}
+            className="transition-all duration-1000 lg:hidden"
+        >
+            {isOpen ? (
+                <Image
+                    src={scroll ? closeBlue : closeWhite}
+                    alt="close"
+                    className="transition-img"
+                    style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    width={40} height={40}
+                />
+            ) : (
+                <Image
+                    src={scroll ? openBlue : openWhite}
+                    alt="open"
+                    className="transition-img"
+                    style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    width={40} height={40}
+                />
+            )}
+        </button>
+    );
+};
 
 export default function Navbar() {
     const [scroll, setScroll] = useState(false);
@@ -29,27 +81,14 @@ export default function Navbar() {
         };
     }, []);
 
-    const handleScrollToSectionAction = (
-        event: React.MouseEvent,
-        sectionId: string
-    ) => {
-        event.preventDefault();
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({behavior: 'smooth'});
-        }
-    };
+    const navbarClasses = getNavbarClasses(scroll, isHomePage, isContactPage);
 
     return (
         <header
-            className={`flex justify-between navbar px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${scroll && isHomePage ? 'bg-white text-primary' : isContactPage ? 'bg-gray-800 text-white' :'bg-transparent text-white'} ${ !isHomePage && !isContactPage ? 'hidden' : ''} 3xl:w-[70%] 3xl:mx-auto`}
+            className={`flex justify-between navbar px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${navbarClasses} ${!isHomePage && !isContactPage ? 'hidden' : ''} 3xl:w-[70%] 3xl:mx-auto`}
         >
-                <a href={`${isHomePage ? '#home' : '/home'}`} onClick={(e) => isHomePage && handleScrollToSectionAction(e, 'home')}>
-                {scroll && isHomePage ? (
-                    <Image src={logoBlue} alt="logo" className="size-12 lg:size-20"/>
-                ) : (
-                    <Image src={logoWhite} alt="logo" className="size-12 lg:size-20"/>
-                )}
+            <a href={`${isHomePage ? '#home' : '/home'}`} onClick={(e) => isHomePage && handleScrollToSectionAction(e, 'home')}>
+                {renderLogo(scroll, isHomePage)}
             </a>
             <ul className="xs:hidden lg:flex lg:items-center lg:gap-10">
                 <li>
@@ -66,43 +105,18 @@ export default function Navbar() {
                     </a>
                 </li>
                 <li>
-                    <a
-                        href="/contact"
-                    >
-                        Contact
-                    </a>
+                    <a href="/contact">Contact</a>
                 </li>
             </ul>
-            {/* Mobile Menu */}
-            <button
-                type="button"
-                onClick={() => setIsOpen(!isOpen)}
-                className="transition-all duration-1000 lg:hidden"
-            >
-                {isOpen ? (
-                    <Image
-                        src={scroll && isHomePage ? closeBlue : closeWhite}
-                        alt="close"
-                        className="transition-img"
-                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                        width={40} height={40}
-                    />
-                ) : (
-                    <Image
-                        src={scroll && isHomePage ? openBlue : openWhite}
-                        alt="open"
-                        className="transition-img"
-                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                        width={40} height={40}
-                    />
-                )}
-            </button>
-            { isOpen &&
-                <ul  className={`transition-menu fixed top-16 right-0 w-full space-y-3 p-5 text-lg ${scroll ? 'bg-white text-primary z-20' : 'bg-gray-800 text-white'}`}
-                     style={{
-                         transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-                         transition: 'transform 0.5s ease-in-out',
-                     }}>
+            {renderMobileMenu(isOpen, scroll, () => setIsOpen(!isOpen))}
+            {isOpen && (
+                <ul
+                    className={`transition-menu fixed top-16 right-0 w-full space-y-3 p-5 text-lg ${scroll ? 'bg-white text-primary z-20' : 'bg-gray-800 text-white'}`}
+                    style={{
+                        transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+                        transition: 'transform 0.5s ease-in-out',
+                    }}
+                >
                     <li>
                         <a href="#about" onClick={(e) => handleScrollToSectionAction(e, 'about')}>
                             À propos
@@ -117,14 +131,10 @@ export default function Navbar() {
                         </a>
                     </li>
                     <li>
-                        <a
-                            href="/contact"
-                        >
-                            Contact
-                        </a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
-            }
+            )}
         </header>
     );
 }

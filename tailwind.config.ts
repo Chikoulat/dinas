@@ -14,15 +14,24 @@ module.exports = {
     theme: {
         extend: {},
         screens: {
-            xs: "450px",
-            sm: "640px",
-            md: "768px",
-            lg: "1024px",
-            xl: "1280px",
-            "2xl": "1536px",
-            "3xl": "1920px",
+            xs: "20rem",
+            sm: "40rem",
+            md: "48rem",
+            lg: "64rem",
+            xl: "80rem",
+            "2xl": "96rem",
         }
     },
+    safelist: [
+        'bg-white',
+        'bg-gray-800',
+        'text-primary',
+        'text-white',
+        'z-20',
+        'hidden',
+        'block',
+        'flex',
+    ],
     plugins: [addVariablesForColors],
 };
 

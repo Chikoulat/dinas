@@ -85,7 +85,7 @@ export default function Navbar() {
 
     return (
         <header
-            className={`flex justify-between navbar px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${navbarClasses} ${!isHomePage && !isContactPage ? 'hidden' : ''} 3xl:w-[70%] 3xl:mx-auto`}
+            className={`flex justify-between navbar px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${navbarClasses} ${!isHomePage && !isContactPage ? 'hidden' : ''} 2xl:w-[80%]`}
         >
             <a href={`${isHomePage ? '#home' : '/home'}`} onClick={(e) => isHomePage && handleScrollToSectionAction(e, 'home')}>
                 {renderLogo(scroll, isHomePage)}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 interface Article {
     id: number;
@@ -11,11 +12,13 @@ interface Article {
     image: string;
 }
 
+type PageParams = {
+    title: string;
+};
+
 interface PageProps {
-    params: {
-        title: string;
-    };
-    searchParams?: {
+    params: Promise<PageParams>;
+    searchParams: Promise<{
         id?: string;
         title?: string;
         content?: string;
@@ -23,21 +26,31 @@ interface PageProps {
         author?: string;
         date_posted?: string;
         image?: string;
+    }>;
+};
+
+export const generateMetadata = async ({ params }: { params: Promise<PageParams> }): Promise<Metadata> => {
+    const resolvedParams = await params;
+    return {
+        title: `Blog - ${resolvedParams.title}`,
     };
-}
+};
 
 export const dynamic = 'force-dynamic';
 
 // This is a server component
-export default function Page({ params, searchParams = {} }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
+    const resolvedParams = await params;
+    const resolvedSearchParams = await searchParams;
+
     const article: Article = {
-        id: Number(searchParams.id) || 0,
-        title: searchParams.title || params.title,
-        content: searchParams.content || '',
-        details: searchParams.details || '',
-        author: searchParams.author || '',
-        date_posted: searchParams.date_posted || '',
-        image: searchParams.image || '',
+        id: Number(resolvedSearchParams.id) || 0,
+        title: resolvedSearchParams.title || resolvedParams.title,
+        content: resolvedSearchParams.content || '',
+        details: resolvedSearchParams.details || '',
+        author: resolvedSearchParams.author || '',
+        date_posted: resolvedSearchParams.date_posted || '',
+        image: resolvedSearchParams.image || '',
     };
 
     if (!article.title) return <p>Loading...</p>;

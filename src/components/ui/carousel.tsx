@@ -7,6 +7,7 @@ interface SlideData {
     title: string;
     button: string;
     src: string;
+    specialties: string[];
 }
 
 interface SlideProps {
@@ -63,13 +64,13 @@ const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
         event.currentTarget.style.opacity = "1";
     };
 
-    const {src, title} = slide;
+    const {src, title, specialties} = slide;
 
     return (
-        <div className="[perspective:1200px] [transform-style:preserve-3d] w-[120%] h-[120%]">
+        <div className="xl:[perspective:1200px] [transform-style:preserve-3d] xl:w-[120%] xl:h-[120%] overflow-hidden">
             <li
                 ref={slideRef}
-                className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10"
+                className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 group"
                 onClick={() => handleSlideClick(index)}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -118,6 +119,15 @@ const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
                         {title}
                     </h2>
                 </article>
+
+                {/* Specialties List */}
+                <ul
+                    className="absolute bottom-[-100%] left-0 w-full bg-black/70 text-white text-sm lg:text-lg p-4 xl:space-y-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-500 ease-in-out"
+                >
+                    {specialties.map((specialty, i) => (
+                        <li key={i}>{specialty}</li>
+                    ))}
+                </ul>
             </li>
         </div>
     );
@@ -152,7 +162,7 @@ interface CarouselProps {
 }
 
 export default function Carousel({slides}: CarouselProps) {
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(1);
 
     const handlePreviousClick = () => {
         const previous = current - 1;

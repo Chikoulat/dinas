@@ -1,8 +1,9 @@
-import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import QueryProvider from "@/service/QueryProvider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -17,27 +18,40 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "Dinas studies & immigration",
     description: "Votre partenaire pour vous accompagner à l’international",
+    keywords: [
+        "Study Abroad", "Immigration Services", "International Education", "Student Visa",
+        "Global Opportunities", "Educational Consultancy", "Academic Programs",
+        "Cultural Exchange", "University Admissions", "Career Development",
+        "Étudier à l'étranger", "Services d'immigration", "Éducation internationale",
+        "Visa étudiant", "Opportunités mondiales", "Conseil en éducation",
+        "Programmes académiques", "Échange culturel", "Admissions universitaires",
+        "Développement de carrière",
+        "الدراسة في الخارج", "خدمات الهجرة", "التعليم الدولي", "تأشيرة الطالب",
+        "الفرص العالمية", "الاستشارات التعليمية", "البرامج الأكاديمية",
+        "التبادل الثقافي", "قبول الجامعات", "تطوير المسار المهني",
+    ],
 };
 
 export default function RootLayout({
                                        children,
-                                   }: Readonly<{
+                                   }: {
     children: React.ReactNode;
-}>) {
+}) {
     return (
         <html lang="en">
         <head>
-            <title>Dinas studies & immigration</title>
-            <meta charSet="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <title>{metadata.title as string}</title>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content={metadata.description as string} />
+            <meta name="keywords" content={metadata.keywords as string} />
         </head>
-
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased 2xl:w-[80%] 2xl:mx-auto`}
         >
-      <Navbar/>
-        {children}
-        <Footer/>
+        <Navbar />
+        <QueryProvider>{children}</QueryProvider>
+        <Footer />
         </body>
         </html>
     );

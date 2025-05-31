@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     },
 
     images: {
-        domains: ['assets.aceternity.com', 'images.unsplash.com'],
+        domains: ['assets.aceternity.com', 'images.unsplash.com', '127.0.0.1'],
     },
 
     async headers()

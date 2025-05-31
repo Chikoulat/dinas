@@ -14,20 +14,19 @@ import {usePathname} from "next/navigation";
 
 function Footer() {
     const pathname = usePathname();
-    const isHomePage = pathname === '/home';
-    const isContactPage = pathname === '/contact';
+    const is404 = pathname === '/**';
     return (
-        <footer className={`space-y-3 p-4 bg-gray-200 ${ !isHomePage && !isContactPage ? 'hidden' : ''}`}>
+        <footer className={`space-y-3 p-4 bg-gray-200 ${ is404 ? 'hidden' : ''}`}>
             <div className="flex items-center gap-4">
                     <Image src={logo} alt="Logo" width={60} height={60} className="size-10"/>
                     <div className="flex flex-col space-x-5 lg:space-x-10 text-xs lg:text-base">
-                        <a href="https://maps.app.goo.gl/tV1JQJxrYnVeGo4W7" target="_blank">Adresse: Cité 800 logements - Boumerdes</a>
-                        <a href="tel:00000000">Téléphone: 000000000</a>
+                        <a href="https://maps.app.goo.gl/oXJmTyZCV7taKaaKA" target="_blank">Adresse: Vila n°4, RC, Frantz Fanon, Boumerdes</a>
+                        <a href="tel:0563475646">Téléphone: 0563475646</a>
                     </div>
             </div>
           <div className="flex justify-between items-center gap-4">
-              <p className="text-sm">© 2025 Dinas Company</p>
-              <div className="flex gap-2">
+              <p className="text-xs lg:text-sm">© 2025 Dinas Company</p>
+              <div className="flex gap-1 lg:gap-2">
               <a href="https://www.facebook.com/share/12AFNhmMjaD/" target="_blank"> <Image src={facebook} alt="facebook" className="size-6 lg:size-12"/></a>
               <a href="https://instagram.com/dinascompanyalgeria" target="_blank"> <Image src={instagram} alt="instagram" className="size-6 lg:size-12"/></a>
               <a href="https://www.linkedin.com/company/dinas-immigration/" target="_blank"> <Image src={linkedin} alt="linkedin" className="size-6 lg:size-12"/></a>

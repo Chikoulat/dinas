@@ -10,23 +10,27 @@ export default function Home() {
         event.preventDefault();
         const section = document.getElementById(sectionId);
         if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({behavior: 'smooth'});
         }
     };
 
     return (
         <section
             id="home"
-            className="bg-gray-800 bg-no-repeat bg-center bg-contain xl:flex flex-col items-end"
+            className="bg-gray-800 bg-no-repeat bg-center bg-contain xl:h-80"
         >
-            <div className="text-white p-5 pt-20 xl:px-20 xl:py-40 xl:w-1/2">
-                <h2 className="text-xl lg:text-3xl">
-                    DINAS - Votre solution immigration en ligne
-                </h2>
-                <p className="mt-5 text-sm lg:text-base lg:text-justify">
-                    <b>DINAS</b> est une plateforme en ligne qui vous permet de gérer vos démarches pour les études à l&#39;étranger, les visas, les permis de travail et de séjour, et bien plus encore. Nous vous accompagnons dans toutes les étapes de votre projet
-                </p>
-                <div className="flex justify-end gap-4">
+            <div className="text-white p-5 pt-20 space-y-4 xl:space-y-0 xl:px-20 xl:py-40 xl:flex xl:justify-between">
+                <div className="xl:w-1/2">
+                    <h2 className="text-xl lg:text-3xl">
+                        DINAS - Votre solution immigration en ligne
+                    </h2>
+                    <p className="mt-5 text-sm lg:text-base lg:text-justify">
+                        <b>DINAS</b> est une plateforme en ligne qui vous permet de gérer vos démarches pour les études
+                        à l&#39;étranger, les visas, les permis de travail et de séjour, et bien plus encore. Nous vous
+                        accompagnons dans toutes les étapes de votre projet
+                    </p>
+                </div>
+                <div className="flex items-center justify-evenly xl:gap-10">
                     <a
                         href="#about"
                         onClick={(event) => handleScrollToSectionAction(event, 'about')}

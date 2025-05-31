@@ -1,27 +1,17 @@
 'use client'
 
 import React, {useEffect, useState} from 'react';
-    import { SubmitHandler, useForm } from 'react-hook-form';
+import {SubmitHandler, useForm} from 'react-hook-form';
 import {toast, ToastContainer} from 'react-toastify';
-import DOMPurify from 'dompurify';
-import emailjs from '@emailjs/browser';
+import {sendEmail, EmailData} from '@/service/EmailService';
 
-type Inputs = {
-    name: string;
-    email: string;
-    phone: string;
-    subject: string;
-    message: string;
-};
-
-
-function Page() {
+export default function Page() {
     const [isLoading, setIsLoading] = useState(false);
     const {
         register,
         handleSubmit,
-        formState: { errors },
-    } = useForm<Inputs>();
+        formState: {errors},
+    } = useForm<EmailData>();
 
     useEffect(() => {
         if (errors.name) toast.info('Veuillez saisir votre nom complet');
@@ -45,34 +35,25 @@ function Page() {
         if (errors.message) toast.info('Veuillez saisir votre message');
     }, [errors]);
 
-    const onSubmit: SubmitHandler<Inputs> = (data, event) => {
+    const onSubmit: SubmitHandler<EmailData> = (data, event) => {
         event?.preventDefault();
         setIsLoading(true);
-        const sanitizedData = {
-            name: DOMPurify.sanitize(data.name),
-            email: DOMPurify.sanitize(data.email),
-            phone: DOMPurify.sanitize(data.phone),
-            subject: DOMPurify.sanitize(data.subject),
-            message: DOMPurify.sanitize(data.message),
-        };
-        const serviceID = process.env.NEXT_PUBLIC_API_SERVICE_ID  as string;
-        const templateID = process.env.NEXT_PUBLIC_API_TEMPLATE_ID  as string;
-        const userID = process.env.NEXT_PUBLIC_API_PUBLIC_KEY  as string;
 
-        emailjs.send(serviceID, templateID, sanitizedData, userID).then(
-            () => {
+        sendEmail(data)
+            .then(() => {
                 toast.success('Votre message a été envoyé avec succès');
-                setIsLoading(false);
-            },
-            () => {
+            })
+            .catch(() => {
                 toast.error("Une erreur est survenue lors de l'envoi de votre message");
+            })
+            .finally(() => {
                 setIsLoading(false);
-            }
-        );
+            });
     };
     return (
-        <section className="flex justify-center items-center pt-20 lg:pt-40 2xl:pb-36 lg:pb-10 bg-white flex-col lg:flex-row ">
-            <div className="container my-12 max-w-[570px] lg:mb-0 w-full px-4 lg:w-1/2 xl:w-6/12">
+        <section
+            className="flex justify-center items-center pt-20 lg:pt-40 2xl:pb-36 lg:pb-10 bg-white flex-col lg:flex-row ">
+            <div className="container my-12 max-w-[570px] lg:mb-0 px-4 lg:w-1/2">
                             <span className="mb-4 block text-base font-semibold text-primary">
                               Besoin de conseils? Nous sommes là pour vous aider
                             </span>
@@ -103,7 +84,7 @@ function Page() {
                             Notre Localisation
                         </h4>
                         <p className="text-base text-body-color">
-                            99 S.t Jomblo Park Pekanbaru 28292. Indonesia
+                            Vila n°4, RC, Frantz Fanon, Boumerdes
                         </p>
                     </div>
                 </div>
@@ -144,7 +125,7 @@ function Page() {
                             Numéro de Téléphone
                         </h4>
                         <p className="text-base text-body-color">
-                            (+62)81 414 257 9980
+                            0563475646
                         </p>
                     </div>
                 </div>
@@ -170,25 +151,26 @@ function Page() {
                             Adresse Email
                         </h4>
                         <p className="text-base text-body-color">
-                           <a href="mailto:Info@dinas-company.com"> Info@dinas-company.com</a>
+                            <a href="mailto:Info@dinas-company.com"> Info@dinas-company.com</a>
                         </p>
                     </div>
                 </div>
             </div>
 
 
-            <form className="space-y-6 relative rounded-lg bg-white p-8 shadow-lg sm:p-12 h-auto lg:w-1/2 2xl:w-1/3" onSubmit={handleSubmit(onSubmit)}>
-                <div className="lg:flex lg:items-center lg:justify-between lg:gap-6 lg:space-y-0 space-y-6">
+            <form className="space-y-6 relative rounded-lg bg-white p-8 shadow-lg sm:p-12 h-auto lg:w-1/2"
+                  onSubmit={handleSubmit(onSubmit)}>
+                <div className="lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0 space-y-6">
                     <input
                         type="text"
                         placeholder="Nom complet"
-                        className="w-full h-10 lg:w-50 2xl:w-40 lg:h-14 px-4 border border-gray-800 rounded"
-                         {...register('name', { required: true, maxLength: 80 })}
+                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
+                        {...register('name', {required: true, maxLength: 80})}
                     />
                     <input
                         type="email"
                         placeholder="Votre Email"
-                        className="w-full h-10 lg:w-50 2xl:w-40 lg:h-14 px-4 border border-gray-800 rounded"
+                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('email', {
                             required: true,
                             pattern: /^\S+@\S+$/i,
@@ -198,25 +180,31 @@ function Page() {
                     <input
                         type="tel"
                         placeholder="Votre Numéro de Téléphone"
-                        className="w-full h-10 lg:w-50 2xl:w-40 lg:h-14 px-4 border border-gray-800 rounded"
+                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('phone', {
                             required: true,
                             pattern: /^[0-9]+$/,
                             minLength: 10,
                         })}
                     />
+                    <input
+                        type="text"
+                        placeholder="Votre entreprise"
+                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
+                        {...register('company', {maxLength: 80})}
+                    />
                 </div>
                 <input
                     type="text"
                     placeholder="Sujet de votre message"
-                    className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
-                    {...register('subject', { required: true, maxLength: 80 })}
+                    className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded 2xl:w-[43.5rem]"
+                    {...register('subject', {required: true, maxLength: 80})}
                 />
                 <textarea
                     placeholder="Votre Message"
                     defaultValue=""
-                    className="w-full h-40 p-4 border border-gray-800 rounded lg:w-[41.5rem] 2xl:w-[34rem]"
-                    {...register('message', { required: true })}
+                    className="w-full h-40 p-4 border border-gray-800 rounded lg:w-[41.5rem] 2xl:w-[43.5rem]"
+                    {...register('message', {required: true})}
                 />
                 <div>
                     <button
@@ -264,5 +252,3 @@ function Page() {
         </section>
     );
 }
-
-export default Page;

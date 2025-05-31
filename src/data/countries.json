@@ -1,50 +1,146 @@
 [
   {
-    "id":1,
+    "id": 1,
     "title": "Canada",
     "button": "",
-    "src": "/countries/Canada.jpg"
+    "src": "/countries/Canada.jpg",
+    "specialties": [
+      "Engineering",
+      "Computer Science",
+      "Business Administration",
+      "Medicine",
+      "Environmental Science",
+      "Psychology",
+      "Law",
+      "Education",
+      "Nursing",
+      "Data Science"
+    ]
   },
   {
-    "id":2,
+    "id": 2,
     "title": "Grèce",
     "button": "",
-    "src": "/countries/Greece.jpg"
+    "src": "/countries/Greece.jpg",
+    "specialties": [
+      "Archaeology",
+      "Philosophy",
+      "History",
+      "Tourism Management",
+      "Marine Biology",
+      "Architecture",
+      "Classical Studies",
+      "Economics",
+      "Political Science",
+      "Cultural Studies"
+    ]
   },
   {
-    "id":3,
+    "id": 3,
     "title": "Pays bas",
     "button": "",
-    "src": "/countries/Holland.jpg"
+    "src": "/countries/Holland.jpg",
+    "specialties": [
+      "Sustainable Energy",
+      "Agriculture",
+      "Water Management",
+      "Design",
+      "Economics",
+      "Artificial Intelligence",
+      "Logistics",
+      "Biomedical Sciences",
+      "Urban Planning",
+      "International Law"
+    ]
   },
   {
-    "id":4,
+    "id": 4,
     "title": "Hongrie",
     "button": "",
-    "src": "/countries/Hungary.jpg"
+    "src": "/countries/Hungary.jpg",
+    "specialties": [
+      "Medicine",
+      "Dentistry",
+      "Pharmacy",
+      "Veterinary Science",
+      "Engineering",
+      "Music",
+      "Architecture",
+      "Business",
+      "Mathematics",
+      "Physics"
+    ]
   },
   {
-    "id":5,
+    "id": 5,
     "title": "Pologne",
     "button": "",
-    "src": "/countries/Polland.jpg"
+    "src": "/countries/Polland.jpg",
+    "specialties": [
+      "Medicine",
+      "Engineering",
+      "Computer Science",
+      "Business",
+      "Law",
+      "Architecture",
+      "Environmental Science",
+      "Physics",
+      "Mathematics",
+      "Cultural Studies"
+    ]
   },
   {
-    "id":6,
+    "id": 6,
     "title": "Portugal",
     "button": "",
-    "src": "/countries/Portugal.jpg"
+    "src": "/countries/Portugal.jpg",
+    "specialties": [
+      "Marine Biology",
+      "Tourism Management",
+      "Architecture",
+      "Engineering",
+      "Medicine",
+      "Law",
+      "Business",
+      "History",
+      "Cultural Studies",
+      "Renewable Energy"
+    ]
   },
   {
-    "id":7,
+    "id": 7,
     "title": "Roumanie",
     "button": "",
-    "src": "/countries/Romania.jpg"
+    "src": "/countries/Romania.jpg",
+    "specialties": [
+      "Medicine",
+      "Dentistry",
+      "Pharmacy",
+      "Engineering",
+      "Computer Science",
+      "Law",
+      "Business",
+      "Mathematics",
+      "Physics",
+      "Cultural Studies"
+    ]
   },
   {
-    "id":8,
+    "id": 8,
     "title": "Espagne",
     "button": "",
-    "src": "/countries/Spain.jpg"
+    "src": "/countries/Spain.jpg",
+    "specialties": [
+      "Architecture",
+      "Tourism Management",
+      "Business",
+      "Law",
+      "Medicine",
+      "Engineering",
+      "Art and Design",
+      "History",
+      "Cultural Studies",
+      "Renewable Energy"
+    ]
   }
 ]

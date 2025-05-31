@@ -164,13 +164,13 @@ export default function Page() {
                     <input
                         type="text"
                         placeholder="Nom complet"
-                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
+                        className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('name', {required: true, maxLength: 80})}
                     />
                     <input
                         type="email"
                         placeholder="Votre Email"
-                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
+                        className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('email', {
                             required: true,
                             pattern: /^\S+@\S+$/i,
@@ -180,7 +180,7 @@ export default function Page() {
                     <input
                         type="tel"
                         placeholder="Votre Numéro de Téléphone"
-                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
+                        className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('phone', {
                             required: true,
                             pattern: /^[0-9]+$/,
@@ -190,20 +190,20 @@ export default function Page() {
                     <input
                         type="text"
                         placeholder="Votre entreprise"
-                        className="w-full h-10 2xl:w-60 lg:h-14 px-4 border border-gray-800 rounded"
+                        className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('company', {maxLength: 80})}
                     />
                 </div>
                 <input
                     type="text"
                     placeholder="Sujet de votre message"
-                    className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded 2xl:w-[43.5rem]"
+                    className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                     {...register('subject', {required: true, maxLength: 80})}
                 />
                 <textarea
                     placeholder="Votre Message"
                     defaultValue=""
-                    className="w-full h-40 p-4 border border-gray-800 rounded lg:w-[41.5rem] 2xl:w-[43.5rem]"
+                    className="w-full h-40 p-4 border border-gray-800 rounded"
                     {...register('message', {required: true})}
                 />
                 <div>

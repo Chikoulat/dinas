@@ -12,10 +12,10 @@ interface Article {
 }
 
 interface PageProps {
-    params: Promise<{
+    params: {
         title: string;
-    }>;
-    searchParams?: Promise<{
+    };
+    searchParams?: {
         id?: string;
         title?: string;
         content?: string;
@@ -23,24 +23,21 @@ interface PageProps {
         author?: string;
         date_posted?: string;
         image?: string;
-    }>;
+    };
 }
 
 export const dynamic = 'force-dynamic';
 
 // This is a server component
-export default async function Page({ params, searchParams }: PageProps) {
-    const resolvedParams = await params;
-    const resolvedSearchParams = searchParams ? await searchParams : {};
-
+export default function Page({ params, searchParams = {} }: PageProps) {
     const article: Article = {
-        id: Number(resolvedSearchParams.id) || 0,
-        title: resolvedSearchParams.title || resolvedParams.title,
-        content: resolvedSearchParams.content || '',
-        details: resolvedSearchParams.details || '',
-        author: resolvedSearchParams.author || '',
-        date_posted: resolvedSearchParams.date_posted || '',
-        image: resolvedSearchParams.image || '',
+        id: Number(searchParams.id) || 0,
+        title: searchParams.title || params.title,
+        content: searchParams.content || '',
+        details: searchParams.details || '',
+        author: searchParams.author || '',
+        date_posted: searchParams.date_posted || '',
+        image: searchParams.image || '',
     };
 
     if (!article.title) return <p>Loading...</p>;

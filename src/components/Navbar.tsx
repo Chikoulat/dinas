@@ -95,7 +95,7 @@ export default function Navbar() {
                onClick={(e) => isHomePage && handleScrollToSectionAction(e, 'home')}>
                 {renderLogo(scroll, isHomePage)}
             </a>
-            <ul className="xs:hidden lg:flex lg:items-center lg:gap-10">
+            <ul className="hidden lg:!flex lg:items-center lg:gap-10">
                 {isHomePage && (
                     <>
                         <li>

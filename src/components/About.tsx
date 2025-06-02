@@ -7,7 +7,7 @@ function About() {
     return (
         <section className=" mx-auto my-4 space-y-8" id="about">
             <div>
-                <h1 className="text-5xl text-center p-4">L&#39;Agence Dina</h1>
+                <h1 className="text-5xl text-center p-4">L&#39;Agence Dinas</h1>
                 <p className="mx-auto px-10 lg:px-20 lg:w-[70%] lg:text-xl">
                     Dinas études & Immigration
                     Spécialiste de la mobilité internationale, nous guidons étudiants et professionnels algériens dans

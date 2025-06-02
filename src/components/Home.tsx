@@ -22,12 +22,10 @@ export default function Home() {
             <div className="text-white p-5 pt-20 space-y-4 xl:space-y-0 xl:px-20 xl:py-40 xl:flex xl:justify-between">
                 <div className="xl:w-1/2">
                     <h2 className="text-xl lg:text-3xl">
-                        DINAS - Votre solution immigration en ligne
+                        Dinas Studies & Immigration
                     </h2>
                     <p className="mt-5 text-sm lg:text-base lg:text-justify">
-                        <b>DINAS</b> est une plateforme en ligne qui vous permet de gérer vos démarches pour les études
-                        à l&#39;étranger, les visas, les permis de travail et de séjour, et bien plus encore. Nous vous
-                        accompagnons dans toutes les étapes de votre projet
+                         Orientation fiable pour études & immigration, contactez-nous pour concrétiser votre projet.
                     </p>
                 </div>
                 <div className="flex items-center justify-evenly xl:gap-10">

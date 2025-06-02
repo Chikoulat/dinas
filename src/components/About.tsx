@@ -9,15 +9,10 @@ function About() {
             <div>
                 <h1 className="text-5xl text-center p-4">L&#39;Agence Dina</h1>
                 <p className="mx-auto px-10 lg:px-20 lg:w-[70%] lg:text-xl">
-                    L&#39;Agence Dina est un acteur incontournable dans le domaine de l&#39;accompagnement des étudiants
-                    algériens
-                    souhaitant poursuivre leurs études à l&#39;étranger. Forte d&#39;une équipe de professionnels
-                    expérimentés et
-                    passionnés, notre agence s&#39;engage à guider chaque étudiant tout au long de son parcours, de la
-                    recherche
-                    d’une formation à l’obtention de son visa, en passant par la préparation aux exigences académiques
-                    et
-                    administratives.
+                    Dinas études & Immigration
+                    Spécialiste de la mobilité internationale, nous guidons étudiants et professionnels algériens dans
+                    leurs projets d’études, de travail ou d’immigration. De la sélection du programme à l’obtention du
+                    visa, notre équipe simplifie chaque démarche académique, professionnelle et administrative.
                 </p>
             </div>
             <FeaturesSectionDemo/>

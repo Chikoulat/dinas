@@ -1,32 +1,22 @@
 [
   {
     "id": 1,
-    "title": "Conseils personnalisés pour le choix des études à l'étranger",
-    "description": "Nous vous aidons à choisir la destination et le programme d’études qui correspondent à vos ambitions académiques et professionnelles. Que ce soit pour l’Europe, l’Amérique, l’Asie ou d’autres régions, nous vous offrons des conseils avisés pour faire le meilleur choix."
+    "title": "Orientation études & carrière",
+    "description": "Choisissez la destination, le programme ou l’opportunité professionnelle adaptés à vos objectifs grâce à un accompagnement stratégique et personnalisé."
   },
   {
     "id": 2,
-    "title": "Assistance dans le processus d'admission",
-    "description": "Nous accompagnons les étudiants dans la constitution de leur dossier de candidature, la rédaction de lettres de motivation et de CV, ainsi que dans la soumission des candidatures aux universités et écoles. Grâce à notre réseau et nos partenariats avec des institutions internationales, nous facilitons votre admission dans des établissements de renom."
+    "title": "Dossiers d’admission & recrutement",
+    "description": "Nous élaborons avec vous des candidatures percutantes : CV, lettres de motivation et formulaires pour universités, écoles ou employeurs internationaux."
   },
   {
     "id": 3,
-    "title": "Préparation aux examens de langue",
-    "description": "Afin de garantir votre admission, nous vous préparons aux tests de langue (TOEFL, IELTS, etc.) nécessaires pour certaines destinations. Nos cours sont dispensés par des experts qui vous aident à atteindre vos objectifs avec des méthodes efficaces et personnalisées."
+    "title": "Préparation aux entretiens",
+    "description": "Entraînement ciblé (en visio ou en présentiel) pour réussir vos entretiens d’admission, de visa ou d’embauche à l’étranger."
   },
   {
     "id": 4,
-    "title": "Assistance pour le visa étudiant",
-    "description": "L’obtention du visa est une étape clé dans le processus. Notre équipe vous guide à travers toutes les démarches administratives et vous aide à constituer un dossier complet pour maximiser vos chances d’obtenir votre visa étudiant."
-  },
-  {
-    "id": 5,
-    "title": "Accompagnement dans la recherche de logement et d’assurance",
-    "description": "Nous vous aidons à trouver un logement adapté à vos besoins et à votre budget dans le pays de destination. Nous vous conseillons également sur les différentes options d’assurance santé et habitation afin que vous soyez bien préparé pour votre séjour."
-  },
-  {
-    "id": 6,
-    "title": "Suivi après l’arrivée à l’étranger",
-    "description": "L’accompagnement ne s’arrête pas une fois que vous avez quitté l’Algérie. Nous restons à vos côtés même après votre arrivée à destination pour vous assurer une intégration réussie et vous soutenir dans la gestion de votre séjour."
+    "title": "Visas & formalités d’immigration",
+    "description": "Étudiants comme professionnels : nous sécurisons chaque pièce de votre dossier et vous guidons jusqu’à l’obtention du visa."
   }
 ]

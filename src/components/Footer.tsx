@@ -28,6 +28,12 @@ function Footer() {
                         <span>/</span>
                         <a href="tel:0781301112">0781301112</a>
                     </div>
+                    <div className="flex gap-2">
+                        <p>Email:</p>
+                        <a href="mailto:Info@dinas-company.com"> Info@dinas-company.com</a>
+                        <span>/</span>
+                        <a href="mailto:contact@dinas-company.com">contact@dinas-company.com</a>
+                    </div>
                 </div>
             </div>
             <div className="flex justify-between items-center gap-4">

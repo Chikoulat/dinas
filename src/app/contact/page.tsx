@@ -228,7 +228,7 @@ export default function Page() {
                                 Numéro de Téléphone
                             </h4>
                             <p className="text-base text-body-color">
-                                0563475646
+                                0563475646 - 0781301112
                             </p>
                         </div>
                     </div>

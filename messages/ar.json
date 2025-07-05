@@ -1,0 +1,113 @@
+{
+  "HomePage": {
+    "Dinas Studies & Immigration": "دراسات ديناس والهجرة",
+    "Concrétiser votre projet": "توجيه موثوق للدراسات والهجرة، اتصل بنا لتحقيق مشروعك",
+    "Contactez-nous": "اتصل بنا",
+    "En savoir plus": "المزيد من المعلومات"
+  },
+  "Slider": {
+    "Gérer votre carrière": "إدارة مسيرتك المهنية الآن",
+    "Dinas vous aide dans vos démarches pour les études à l'étranger, commencez à remplir": "ديناس تساعدك في إجراءاتك للدراسة في الخارج، ابدأ بملء",
+    "Ce formulaire": "هذا النموذج",
+    "Pour un accompagnement sur mesure": "للحصول على دعم مخصص."
+  },
+  "About": {
+    "L'Agence Dinas": "وكالة ديناس",
+    "Dinas Studies & Immigration": "دراسات ديناس والهجرة",
+    "Dinas": "متخصصون في التنقل الدولي، نحن نوجه الطلاب والمهنيين الجزائريين في مشاريعهم الدراسية أو العمل أو الهجرة. من اختيار البرنامج إلى الحصول على التأشيرة، يبسط فريقنا كل إجراء أكاديمي ومهني وإداري"
+  },
+  "Services": {
+    "Découvrez nos services": "اكتشف خدماتنا",
+    "Orientation études & carrière": "توجيه دراسات ومسيرة مهنية",
+    "Dossiers d’admission & recrutement": "ملفات القبول والتوظيف",
+    "Préparation aux entretiens": "التحضير للمقابلات",
+    "Visas & formalités d’immigration": "التأشيرات والإجراءات الإدارية للهجرة",
+    "Choisissez la destination, le programme ou l’opportunité professionnelle adaptés à vos objectifs grâce à un accompagnement stratégique et personnalisé": "اختر الوجهة، البرنامج أو الفرصة المهنية التي تتناسب مع أهدافك بفضل مرافقة استراتيجية وشخصية",
+    "Nous élaborons avec vous des candidatures percutantes, CV, lettres de motivation et formulaires pour universités, écoles ou employeurs internationaux": "نقوم بإعداد طلبات فعالة معك: السيرة الذاتية، رسائل التحفيز والنماذج للجامعات، المدارس أو أصحاب العمل الدوليين",
+    "Entraînement ciblé (en visio ou en présentiel) pour réussir vos entretiens d’admission, de visa ou d’embauche à l’étranger": "تدريب موجه (عن بُعد أو حضوري) للنجاح في مقابلات القبول، التأشيرة أو التوظيف في الخارج",
+    "Étudiants comme professionnels, nous sécurisons chaque pièce de votre dossier et vous guidons jusqu’à l’obtention du visa": "سواء كنت طالبًا أو محترفًا: نؤمن كل وثيقة في ملفك ونرشدك حتى الحصول على التأشيرة"
+  },
+  "Countries": {
+    "Une Séléction de pays pour construire votre futur carrière": "اختيار دول لبناء مسيرتك المهنية المستقبلية",
+    "Canada": "كندا",
+    "Grèce": "اليونان",
+    "Pays bas": "هولندا",
+    "Hongrie": "المجر",
+    "Pologne": "بولندا",
+    "Portugal": "البرتغال",
+    "Roumanie": "رومانيا",
+    "Espagne": "إسبانيا"
+  },
+  "Specialities": {
+    "Archaeology": "علم الآثار",
+    "Philosophy": "الفلسفة",
+    "History": "التاريخ",
+    "Tourism Management": "إدارة السياحة",
+    "Marine Biology": "علم الأحياء البحرية",
+    "Architecture": "الهندسة المعمارية",
+    "Classical Studies": "الدراسات الكلاسيكية",
+    "Economics": "الاقتصاد",
+    "Political Science": "العلوم السياسية",
+    "Cultural Studies": "الدراسات الثقافية",
+    "Sustainable Energy": "الطاقة المستدامة",
+    "Agriculture": "الزراعة",
+    "Water Management": "إدارة المياه",
+    "Design": "التصميم",
+    "Artificial Intelligence": "الذكاء الاصطناعي",
+    "Logistics": "اللوجستيات",
+    "Biomedical Sciences": "العلوم الطبية الحيوية",
+    "Urban Planning": "التخطيط الحضري",
+    "International Law": "القانون الدولي",
+    "Medicine": "الطب",
+    "Dentistry": "طب الأسنان",
+    "Pharmacy": "الصيدلة",
+    "Veterinary Science": "علوم الطب البيطري",
+    "Engineering": "الهندسة",
+    "Music": "الموسيقى",
+    "Business": "الأعمال",
+    "Mathematics": "الرياضيات",
+    "Physics": "الفيزياء",
+    "Veterinary Medicine": "الطب البيطري",
+    "Psychology": "علم النفس",
+    "Information Technology": "تكنولوجيا المعلومات",
+    "Computer Science": "علوم الحاسوب",
+    "Business Administration": "إدارة الأعمال",
+    "Environmental Science": "علوم البيئة",
+    "Law": "القانون",
+    "Education": "التعليم",
+    "Nursing": "التمريض",
+    "Data Science": "علوم البيانات",
+    "Renewable Energy": "الطاقة المتجددة",
+    "Art and Design": "الفن والتصميم"
+  },
+  "Navbar": {
+    "À propos": "عن ديناس",
+    "Pays": "البلدان",
+    "Contact": "اتصل بنا",
+    "English": "الإنجليزية",
+    "French": "الفرنسية",
+    "Arabic": "العربية"
+  },
+  "Footer": {
+    "Adresse": "العنوان",
+    "Vila n°4, RC, Frantz Fanon, Boumerdes": "فيلا رقم 4، RC، فرانتز فانون، بومرداس",
+    "Email": "البريد الإلكتروني",
+    "Téléphone": "الهاتف",
+    "© 2025 Dinas Company": "© 2025 شركة ديناس",
+    "All rights reserved": "All rights reserved"
+  },
+  "Contact": {
+    "Nom complet": "الاسم",
+    "Email": "البريد الإلكتروني",
+    "Numéro de téléphone": "رقم الهاتف",
+    "Entreprise": "المؤسسة",
+    "Sujet": "الموضوع",
+    "Sujet de votre message": "موضوع رسالتك",
+    "Message": "الرسالة",
+    "Envoyer": "إرسال",
+    "Besoin de conseils? Nous sommes là pour vous aider": "تحتاج إلى نصيحة؟ نحن هنا لمساعدتك",
+    "Dites-nous tout!": "أخبرنا بكل شيء!",
+    "Notre Localisation": "موقعنا",
+    "Vila n°4, RC, Frantz Fanon, Boumerdes": "فيلا رقم 4، RC، فرانتز فانون، بومرداس"
+  }
+}

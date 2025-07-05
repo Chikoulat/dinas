@@ -4,8 +4,10 @@ import React, {useEffect, useState} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {toast, ToastContainer} from 'react-toastify';
 import {sendEmail, EmailData} from '@/service/EmailService';
+import {useTranslations} from "next-intl";
 
 export default function Page() {
+    const t = useTranslations('Contact');
     const [isLoading, setIsLoading] = useState(false);
     const {
         register,
@@ -71,13 +73,13 @@ export default function Page() {
                     <div className="lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0 space-y-6">
                         <input
                             type="text"
-                            placeholder="Nom complet"
+                            placeholder={t("Nom complet")}
                             className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                             {...register('name', {required: true, maxLength: 80})}
                         />
                         <input
                             type="email"
-                            placeholder="Votre Email"
+                            placeholder={t("Email")}
                             className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                             {...register('email', {
                                 required: true,
@@ -87,7 +89,7 @@ export default function Page() {
                         />
                         <input
                             type="tel"
-                            placeholder="Votre Numéro de Téléphone"
+                            placeholder={t("Numéro de téléphone")}
                             className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                             {...register('phone', {
                                 required: true,
@@ -97,19 +99,19 @@ export default function Page() {
                         />
                         <input
                             type="text"
-                            placeholder="Votre entreprise"
+                            placeholder={t("Entreprise")}
                             className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                             {...register('company', {maxLength: 80})}
                         />
                     </div>
                     <input
                         type="text"
-                        placeholder="Sujet de votre message"
+                        placeholder={t("Sujet de votre message")}
                         className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                         {...register('subject', {required: true, maxLength: 80})}
                     />
                     <textarea
-                        placeholder="Votre Message"
+                        placeholder={t("Message")}
                         defaultValue=""
                         className="w-full h-40 p-4 border border-gray-800 rounded"
                         {...register('message', {required: true})}
@@ -141,7 +143,7 @@ export default function Page() {
                                     ></path>
                                 </svg>
                             ) : (
-                                'Envoyer'
+                                t('Envoyer')
                             )}
                         </button>
                     </div>
@@ -160,10 +162,10 @@ export default function Page() {
             </div>
             <div className="container my-4 px-10">
                             <span className="mb-4 block text-base font-semibold text-primary">
-                              Besoin de conseils? Nous sommes là pour vous aider
+                              {t("Besoin de conseils? Nous sommes là pour vous aider")}
                             </span>
                 <h2 className="mb-6 text-[20px] font-bold uppercase text-dark lg:text-[36px] xl:text-[40px]">
-                    Dites-nous tout!
+                    {t("Dites-nous tout!")}
                 </h2>
                 <div className="flex flex-col lg:flex-row justify-between space-y-6">
                     <div className="flex items-center justify-center w-full max-w-[370px]">
@@ -184,10 +186,10 @@ export default function Page() {
                         </div>
                         <div className="w-full">
                             <h4 className="text-md lg:text-xl font-bold text-dark">
-                                Notre Localisation
+                                {t("Notre Localisation")}
                             </h4>
                             <p className="text-base text-body-color">
-                                Vila n°4, RC, Frantz Fanon, Boumerdes
+                                {t("Vila n°4, RC, Frantz Fanon, Boumerdes")}
                             </p>
                         </div>
                     </div>
@@ -225,7 +227,7 @@ export default function Page() {
                         </div>
                         <div className="w-full">
                             <h4 className="text-md lg:text-xl font-bold text-dark">
-                                Numéro de Téléphone
+                                {t("Numéro de téléphone")}
                             </h4>
                             <p className="text-base text-body-color">
                                 0563475646 - 0781301112
@@ -251,7 +253,7 @@ export default function Page() {
                         </div>
                         <div className="w-full">
                             <h4 className="text-md lg:text-xl font-bold text-dark">
-                                Adresse Email
+                                {t("Email")}
                             </h4>
                             <p className="text-base text-body-color">
                                 <a href="mailto:Info@dinas-company.com"> Info@dinas-company.com</a>

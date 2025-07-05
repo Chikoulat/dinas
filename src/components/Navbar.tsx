@@ -121,7 +121,7 @@ export default function Navbar() {
                 <select
                     value={language}
                     onChange={handleLanguageChange}
-                    className={`${scroll ? "border border-black" : "bg-gray-100"} text-black rounded px-4 py-2`}
+                    className={`${scroll && isHomePage ? "border border-black" : "bg-gray-100"} text-black rounded px-4 py-2`}
                 >
                     {Languages.map((lang) => (
                         <option key={lang.id} value={lang.code}>

@@ -80,7 +80,7 @@ export default function Page() {
                         <input
                             type="email"
                             placeholder={t("Email")}
-                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
+                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded ltr-text"
                             {...register('email', {
                                 required: true,
                                 pattern: /^\S+@\S+$/i,
@@ -88,9 +88,9 @@ export default function Page() {
                             })}
                         />
                         <input
-                            type="tel"
+                            type="text"
                             placeholder={t("Numéro de téléphone")}
-                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
+                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded ltr-text"
                             {...register('phone', {
                                 required: true,
                                 pattern: /^[0-9]+$/,
@@ -167,10 +167,10 @@ export default function Page() {
                 <h2 className="mb-6 text-[20px] font-bold uppercase text-dark lg:text-[36px] xl:text-[40px]">
                     {t("Dites-nous tout!")}
                 </h2>
-                <div className="flex flex-col lg:flex-row justify-between space-y-6">
-                    <div className="flex items-center justify-center w-full max-w-[370px]">
+                <div className="flex flex-col lg:flex-row justify-between">
+                    <div className="flex items-center w-full max-w-[370px]">
                         <div
-                            className="mr-6 flex h-[30px] xl:h-[60px] xl:w-full xl:max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                            className="mx-3 flex h-[30px] xl:h-[60px] xl:w-full xl:max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
                             <svg
                                 width="32"
                                 height="32"
@@ -194,9 +194,9 @@ export default function Page() {
                         </div>
                     </div>
 
-                    <div className="flex items-center xl:w-full xl:max-w-[370px] ">
+                    <div className="flex items-center xl:w-full xl:max-w-[370px]">
                         <div
-                            className="mr-6 flex h-[30px] xl:h-[60px] xl:w-full xl:max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                            className="mx-3 flex h-[30px] xl:h-[60px] xl:w-full xl:max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
                             <svg
                                 width="32"
                                 height="32"
@@ -237,7 +237,7 @@ export default function Page() {
 
                     <div className="flex items-center w-full max-w-[370px]">
                         <div
-                            className="mr-6 flex h-[30px] xl:h-[60px] xl:w-full xl:max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                            className="mx-3 flex h-[30px] xl:h-[60px] xl:w-full xl:max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
                             <svg
                                 width="32"
                                 height="32"

@@ -1,7 +1,8 @@
 "use client";
 import {IconArrowNarrowRight} from "@tabler/icons-react";
-import {useState, useRef, useId, useEffect} from "react";
+import React, {useState, useRef, useId, useEffect} from "react";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 interface SlideData {
     title: string;
@@ -18,6 +19,8 @@ interface SlideProps {
 }
 
 const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
+    const t = useTranslations("Countries");
+    const r = useTranslations("Specialities");
     const slideRef = useRef<HTMLLIElement>(null);
 
     const xRef = useRef(0);
@@ -116,7 +119,7 @@ const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
                     }`}
                 >
                     <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold relative">
-                        {title}
+                        {t(title)}
                     </h2>
                 </article>
 
@@ -125,7 +128,7 @@ const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
                     className="absolute bottom-[-100%] left-0 w-full bg-black/70 text-white text-sm lg:text-lg p-4 xl:space-y-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-500 ease-in-out"
                 >
                     {specialties.map((specialty, i) => (
-                        <li key={i}>{specialty}</li>
+                        <li key={i}>{r(specialty)}</li>
                     ))}
                 </ul>
             </li>
@@ -184,7 +187,7 @@ export default function Carousel({slides}: CarouselProps) {
 
     return (
         <div
-            className="relative size-[70vmin] mx-auto"
+            className="carousel-class relative size-[70vmin] mx-auto"
             aria-labelledby={`carousel-heading-${id}`}
         >
             <ul

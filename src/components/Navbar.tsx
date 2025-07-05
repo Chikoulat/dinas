@@ -10,6 +10,10 @@ import closeWhite from '../../public/button/close-white.png';
 import closeBlue from '../../public/button/close-blue.png';
 import {usePathname} from 'next/navigation';
 import Link from "next/link";
+import {useTranslations} from "next-intl";
+import Languages from "@/data/Language.json";
+import Cookies from 'js-cookie';
+import {useRouter} from 'next/navigation';
 
 const handleScrollToSectionAction = (
     event: React.MouseEvent,
@@ -66,6 +70,8 @@ const renderMobileMenu = (isOpen: boolean, scroll: boolean, handleToggle: () => 
 };
 
 export default function Navbar() {
+    const t = useTranslations("Navbar");
+    const router = useRouter();
     const [scroll, setScroll] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
@@ -73,6 +79,21 @@ export default function Navbar() {
     const isContactPage = pathname === '/contact';
     const isBlog = pathname === '/blog' || pathname.startsWith('/blog/');
     const is404 = pathname === '/**';
+    const [language, setLanguage] = useState('');
+
+    useEffect(() => {
+        const savedLocale = Cookies.get('locale');
+        if (savedLocale) {
+            setLanguage(savedLocale);
+        }
+    }, []);
+
+    const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const newLocale = event.target.value;
+        setLanguage(newLocale);
+        Cookies.set("locale", newLocale, {expires: 365});
+        router.refresh();
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -91,27 +112,46 @@ export default function Navbar() {
         <header
             className={`flex justify-between px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${navbarClasses} ${is404 ? 'hidden' : ''} 2xl:w-[80%]`}
         >
-            <a href={`${isHomePage ? '#home' : '/home'}`}
-               onClick={(e) => isHomePage && handleScrollToSectionAction(e, 'home')}>
-                {renderLogo(scroll, isHomePage)}
-            </a>
+
+            <div className="flex items-center gap-8">
+                <a href={`${isHomePage ? '#home' : '/home'}`}
+                   onClick={(e) => isHomePage && handleScrollToSectionAction(e, 'home')}>
+                    {renderLogo(scroll, isHomePage)}
+                </a>
+                <select
+                    value={language}
+                    onChange={handleLanguageChange}
+                    className={`${scroll ? "border border-black" : "bg-gray-100"} text-black rounded px-4 py-2`}
+                >
+                    {Languages.map((lang) => (
+                        <option key={lang.id} value={lang.code}>
+                            {t(lang.language)}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            <Link href="/contact" className="hidden lg:block">
+                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                    {t("Contact")}
+                </button>
+            </Link>
             <ul className="hidden lg:!flex lg:items-center lg:gap-10">
                 {isHomePage && (
                     <>
                         <li>
                             <a href="#about" onClick={(e) => handleScrollToSectionAction(e, 'about')}>
-                                À propos
+                                {t("À propos")}
                             </a>
                         </li>
                         <li>
                             <a href="#countries" onClick={(e) => handleScrollToSectionAction(e, 'countries')}>
-                                Pays
+                                {t("Pays")}
                             </a>
                         </li>
                     </>
                 )}
-               {/* <li><Link href="/blog">Blog</Link></li> */}
-                <li><Link href="/contact">Contact</Link></li>
+                {/* <li><Link href="/blog">Blog</Link></li> */}
+                <li><Link href="/contact">{t("Contact")}</Link></li>
             </ul>
             {
                 renderMobileMenu(isOpen, scroll, () => setIsOpen(!isOpen), isHomePage)
@@ -129,18 +169,18 @@ export default function Navbar() {
                             <>
                                 <li>
                                     <a href="#about" onClick={(e) => handleScrollToSectionAction(e, 'about')}>
-                                        À propos
+                                        {t("À propos")}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#countries" onClick={(e) => handleScrollToSectionAction(e, 'countries')}>
-                                        Pays
+                                        {t("Pays")}
                                     </a>
                                 </li>
                             </>
                         )}
-                       {/* <li><Link href="/blog">Blog</Link></li> */}
-                        <li><Link href="/contact">Contact</Link></li>
+                        {/* <li><Link href="/blog">Blog</Link></li> */}
+                        <li><Link href="/contact">{t("Contact")}</Link></li>
                     </ul>
                 )}
         </header>

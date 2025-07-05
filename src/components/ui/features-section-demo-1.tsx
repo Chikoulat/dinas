@@ -1,26 +1,28 @@
 import React from "react";
 import {useId} from "react";
-import grid from "../../data/features.json";
+import features from "../../data/features.json";
+import {useTranslations} from "next-intl";
 
 export default function FeaturesSectionDemo() {
+    const t = useTranslations("Services");
     return (
         <div className="py-8 lg:py-20 space-y-10 bg-[url('/images/bg-features.jpg')] bg-cover bg-center bg-no-repeat rounded-lg">
-            <h2 className="text-3xl lg:text-5xl text-center text-neutral-900 dark:text-white">
-                Découvrez nos services
+            <h2 className="text-3xl lg:text-5xl text-center  text-white">
+                {t("Découvrez nos services")}
             </h2>
             <div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-10 md:gap-2 max-w-7xl mx-auto ">
-                {grid.map((feature) => (
+                {features.map((feature) => (
                     <div
-                        key={feature.title}
+                        key={feature.id}
                         className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100/80 dark:to-neutral-950 to-white/80 p-6 rounded-3xl overflow-hidden"
                     >
                         <Grid size={20}/>
                         <p className="text-base font-bold text-neutral-800 dark:text-white relative z-20">
-                            {feature.title}
+                            {t(feature.title)}
                         </p>
                         <p className="text-neutral-600 dark:text-neutral-400 mt-4 text-base font-normal relative z-20">
-                            {feature.description}
+                            {t(feature.description)}
                         </p>
                     </div>
                 ))}

@@ -80,7 +80,7 @@ export default function Page() {
                         <input
                             type="email"
                             placeholder={t("Email")}
-                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded ltr-text"
+                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                             {...register('email', {
                                 required: true,
                                 pattern: /^\S+@\S+$/i,
@@ -90,7 +90,7 @@ export default function Page() {
                         <input
                             type="text"
                             placeholder={t("Numéro de téléphone")}
-                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded ltr-text"
+                            className="w-full h-10 lg:h-14 px-4 border border-gray-800 rounded"
                             {...register('phone', {
                                 required: true,
                                 pattern: /^[0-9]+$/,
@@ -230,7 +230,7 @@ export default function Page() {
                                 {t("Numéro de téléphone")}
                             </h4>
                             <p className="text-base text-body-color">
-                                0563475646 - 0781301112
+                                0563475646 - 0549725876
                             </p>
                         </div>
                     </div>

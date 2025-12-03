@@ -110,7 +110,7 @@ export default function Navbar() {
 
     return (
         <header
-            className={`flex justify-between px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${navbarClasses} ${is404 ? 'hidden' : ''} 2xl:w-[80%]`}
+            className={`flex justify-between px-5 py-2 fixed w-full transition-colors duration-300 z-50 ${navbarClasses} ${is404 ? 'hidden' : ''} `}
         >
 
             <div className="flex items-center gap-8">

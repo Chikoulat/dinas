@@ -6,7 +6,6 @@ import logo from "../../public/logo/DCA LOGO B.png";
 import facebook from "../../public/social/facebook.png";
 import instagram from "../../public/social/instagram.png";
 import linkedin from "../../public/social/linkedin.png";
-import telegram from "../../public/social/telegram.png";
 import tiktok from "../../public/social/tiktok.png";
 import whatsapp from "../../public/social/whatsapp.png";
 import youtube from "../../public/social/youtube.png";
@@ -28,7 +27,7 @@ function Footer() {
                         <p>{t("Téléphone")}:</p>
                         <a href="tel:0563475646"> 0563475646</a>
                         <span>/</span>
-                        <a href="tel:0781301112">0781301112</a>
+                        <a href="tel:0549725876">0549725876</a>
                         </div>
                         <div className="flex gap-2">
                         <p>{t("Email")}:</p>
@@ -50,8 +49,6 @@ function Footer() {
                 <a href="https://www.linkedin.com/company/dinas-immigration/" target="_blank"> <Image src={linkedin}
                                                                                                       alt="linkedin"
                                                                                                       className="size-6 lg:size-12"/></a>
-                <a href="https://@Dinasdz" target="_blank"> <Image src={telegram} alt="telegram"
-                                                                   className="size-6 lg:size-12"/> </a>
                 <a href="https://www.tiktok.com/@dinasmultimedia" target="_blank"> <Image src={tiktok} alt="tiktok"
                                                                                           className="size-6 lg:size-12"/></a>
                 <a href="https://api.whatsapp.com/send?phone=213549725876" target="_blank"> <Image src={whatsapp}

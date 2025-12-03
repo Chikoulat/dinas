@@ -5,7 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {NextIntlClientProvider} from 'next-intl';
-import {getLocale} from 'next-intl/server';
+import {getMessages, getLocale} from 'next-intl/server';
 import QueryProvider from "@/service/QueryProvider";
 import DirectionHandler from "@/service/DirectionHandler";
 
@@ -38,36 +38,25 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-                                       children,
-                                   }: {
+                                             children,
+                                         }: {
     children: React.ReactNode;
 }) {
     const locale = await getLocale();
+    const messages = await getMessages();
 
     return (
         <html lang={locale}>
-        <head>
-            <title>{metadata.title as string}</title>
-            <meta charSet="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <meta name="description" content={metadata.description as string}/>
-            <meta name="keywords" content={metadata.keywords as string}/>
-        </head>
-
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased 2xl:w-[80%] 2xl:mx-auto`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <DirectionHandler locale={locale} />
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+            <DirectionHandler locale={locale}/>
             <Navbar/>
-            {/* The QueryProvider is used to provide the query client to the application. */}
             <QueryProvider>{children}</QueryProvider>
             <Footer/>
         </NextIntlClientProvider>
-
         </body>
         </html>
-    )
-        ;
+    );
 }
-

@@ -1,7 +1,7 @@
 {
   "HomePage": {
-    "Dinas Studies & Immigration": "دراسات ديناس والهجرة",
-    "Concrétiser votre projet": "توجيه موثوق للدراسات والهجرة، اتصل بنا لتحقيق مشروعك",
+    "Dinas Studies & Immigration": "ديناس للدراسة والهجرة",
+    "Concrétiser votre projet": "توجيه موثوق للدراسة والهجرة، اتصل بنا لتحقيق مشروعك",
     "Contactez-nous": "اتصل بنا",
     "En savoir plus": "المزيد من المعلومات"
   },
@@ -13,19 +13,19 @@
   },
   "About": {
     "L'Agence Dinas": "وكالة ديناس",
-    "Dinas Studies & Immigration": "دراسات ديناس والهجرة",
-    "Dinas": "متخصصون في التنقل الدولي، نحن نوجه الطلاب والمهنيين الجزائريين في مشاريعهم الدراسية أو العمل أو الهجرة. من اختيار البرنامج إلى الحصول على التأشيرة، يبسط فريقنا كل إجراء أكاديمي ومهني وإداري"
+    "Dinas Studies & Immigration": "ديناس للدراسة والهجرة",
+    "Dinas": ".متخصصون في الهجرة الدراسية والمهنية، نحن نوجه الطلاب والمهنيين الجزائريين في مشاريعهم الدراسية , العمل و الهجرة. من اختيار البرنامج إلى معالجة ملف التأشيرة والحصول على موعد، يبسط فريقنا كل إجراء أكاديمي ومهني وإداري"
   },
   "Services": {
     "Découvrez nos services": "اكتشف خدماتنا",
-    "Orientation études & carrière": "توجيه دراسات ومسيرة مهنية",
+    "Orientation études & carrière": "التوجيه في الدراسة و المسيرة المهنية",
     "Dossiers d’admission & recrutement": "ملفات القبول والتوظيف",
     "Préparation aux entretiens": "التحضير للمقابلات",
     "Visas & formalités d’immigration": "التأشيرات والإجراءات الإدارية للهجرة",
     "Choisissez la destination, le programme ou l’opportunité professionnelle adaptés à vos objectifs grâce à un accompagnement stratégique et personnalisé": "اختر الوجهة، البرنامج أو الفرصة المهنية التي تتناسب مع أهدافك بفضل مرافقة استراتيجية وشخصية",
     "Nous élaborons avec vous des candidatures percutantes, CV, lettres de motivation et formulaires pour universités, écoles ou employeurs internationaux": "نقوم بإعداد طلبات فعالة معك: السيرة الذاتية، رسائل التحفيز والنماذج للجامعات، المدارس أو أصحاب العمل الدوليين",
     "Entraînement ciblé (en visio ou en présentiel) pour réussir vos entretiens d’admission, de visa ou d’embauche à l’étranger": "تدريب موجه (عن بُعد أو حضوري) للنجاح في مقابلات القبول، التأشيرة أو التوظيف في الخارج",
-    "Étudiants comme professionnels, nous sécurisons chaque pièce de votre dossier et vous guidons jusqu’à l’obtention du visa": "سواء كنت طالبًا أو محترفًا: نؤمن كل وثيقة في ملفك ونرشدك حتى الحصول على التأشيرة"
+    "Étudiants comme professionnels, nous sécurisons chaque pièce de votre dossier et vous guidons jusqu’à l’obtention du visa": "سواء كنت طالبًا أو محترفًا: نؤمن كل وثيقة في ملفك و نرشدك حتى معالجة ملف التأشيرة والحصول على موعد"
   },
   "Countries": {
     "Une Séléction de pays pour construire votre futur carrière": "اختيار دول لبناء مسيرتك المهنية المستقبلية",
@@ -90,7 +90,7 @@
   },
   "Footer": {
     "Adresse": "العنوان",
-    "Vila n°4, RC, Frantz Fanon, Boumerdes": "فيلا رقم 4، RC، فرانتز فانون، بومرداس",
+    "Vila n°4, RC, Frantz Fanon, Boumerdes": "فيلا رقم 04، حي فرانتز فانون، بومرداس",
     "Email": "البريد الإلكتروني",
     "Téléphone": "الهاتف",
     "© 2025 Dinas Company": "© 2025 شركة ديناس",
@@ -108,6 +108,6 @@
     "Besoin de conseils? Nous sommes là pour vous aider": "تحتاج إلى نصيحة؟ نحن هنا لمساعدتك",
     "Dites-nous tout!": "أخبرنا بكل شيء!",
     "Notre Localisation": "موقعنا",
-    "Vila n°4, RC, Frantz Fanon, Boumerdes": "فيلا رقم 4، RC، فرانتز فانون، بومرداس"
+    "Vila n°4, RC, Frantz Fanon, Boumerdes": "فيلا رقم 04، حي فرانتز فانون، بومرداس"
   }
 }
